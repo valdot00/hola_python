@@ -25,3 +25,13 @@ print(resultado)
 
 print("----------------------------")
 
+print(type(longitud))
+
+print(type(cadena))
+
+resultado=mayusculas+" tiene longitud de " + str(longitud)
+
+print(resultado)
+
+
+
