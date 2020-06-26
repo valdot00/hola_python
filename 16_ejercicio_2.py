@@ -21,3 +21,5 @@ print(mayusculas)
 resultado=str(mayusculas) 
 
 print(resultado)
+
+print("----------------------------")
