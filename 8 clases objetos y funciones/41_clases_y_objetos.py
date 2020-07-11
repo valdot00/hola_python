@@ -30,7 +30,6 @@ class Persona:
     def saludar(self):
         print("hola, me llamo {} y tengo {} años".format(self.nombre,self.edad))          
 
-
 Persona1 = Persona("juan",37)
 
 print(Persona1.edad)
