@@ -4,12 +4,16 @@ def saludar():
 
 print(saludar())
 
+print("-----------")
+
 def saludar(nombre):
     print("buenos dias "+nombre)
 
 nombre = "antonio"    
 
 print(saludar(nombre))
+
+print("-----------")
 
 def sumar(numero1,numero2):
     suma=numero1+numero2
@@ -23,6 +27,8 @@ resultado=sumar(numero1,numero2)
 
 print(resultado)
 
+print("-----------")
+
 #paso de valor por referencia
 
 colores=["rojo","verde","azul"]
@@ -35,3 +41,5 @@ color = "negro"
 incluir_color(colores,color)
 
 print(colores)    
+
+print("-----------")
