@@ -6,6 +6,8 @@ coche1 =ejercicio_50.coche("fiat","blanco","diesel","1.5")
 
 print(coche1.mostrar())
 
+print("-----------------------------")
+
 media = ejercicio_50.media(3,8,7)
 
 print("nuestra nota media es{}".format(media))

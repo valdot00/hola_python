@@ -23,6 +23,5 @@ class coche:
         print("caracteristicas del coche marca:{} color:{} combustible:{} cilindrada:{}"
         .format(auto.marca,auto.color,auto.combustible,auto.cilindrada))
 
-
 media=lambda nota1,nota2,nota3 : (nota1+nota2+nota3)/3 
 
