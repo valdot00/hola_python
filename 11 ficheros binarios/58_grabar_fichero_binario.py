@@ -1,0 +1,1 @@
+#58 grabar fichero binario 
