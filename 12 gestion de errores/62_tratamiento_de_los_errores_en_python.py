@@ -43,5 +43,3 @@ else:
     print("la division funciono correctamente")  
 finally:
     print("esta prueba del try se ha acabado")    
-
-
