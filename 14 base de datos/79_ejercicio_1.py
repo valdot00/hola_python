@@ -12,5 +12,8 @@
 # 3,"ordenador",600
 
 #consultar los productos de la tabla "productos"
-# cerrar la base de datos "basededatos.db" 
+# cerrar la base de datos "basededatos.db"
+
+import sqlite3
+ 
        
