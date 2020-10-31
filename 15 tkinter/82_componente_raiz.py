@@ -3,6 +3,6 @@
 import tkinter
 
 raiz = tkinter.Tk()
-raiz.title("mi programa")
+raiz.title("ventana raiz")
 
 raiz.mainloop()
