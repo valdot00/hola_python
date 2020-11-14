@@ -28,3 +28,4 @@ boton_reset = Button(ventana,text="AC",width=8,height=2,command=lambda:borrar())
 boton_reset.grid(row=0,column=3,pady=10)
 
 ventana.mainloop()
+
