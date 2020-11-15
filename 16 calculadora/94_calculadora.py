@@ -51,4 +51,32 @@ boton3.grid(row=1,column=2,padx=5,pady=5)
 boton4=Button(ventana,text="4",width=ancho,height=alto,command=lambda:pulsar("4"))
 boton4.grid(row=1,column=3,padx=5,pady=5)
 
+# Botones de la fila 2
+
+boton5=Button(ventana,text="5",width=ancho,height=alto,command=lambda:pulsar("5"))
+boton5.grid(row=2,column=0,padx=5,pady=5)
+
+boton6=Button(ventana,text="6",width=ancho,height=alto,command=lambda:pulsar("6"))
+boton6.grid(row=2,column=1,padx=5,pady=5)
+
+boton7=Button(ventana,text="7",width=ancho,height=alto,command=lambda:pulsar("7"))
+boton7.grid(row=2,column=2,padx=5,pady=5)
+
+boton8=Button(ventana,text="8",width=ancho,height=alto,command=lambda:pulsar("8"))
+boton8.grid(row=2,column=3,padx=5,pady=5)
+
+# Botones de la fila 3
+
+boton9=Button(ventana,text="9",width=ancho,height=alto,command=lambda:pulsar("9"))
+boton9.grid(row=3,column=0,padx=5,pady=5)
+
+boton0=Button(ventana,text="0",width=ancho,height=alto,command=lambda:pulsar("0"))
+boton0.grid(row=3,column=1,padx=5,pady=5)
+
+boton_punto=Button(ventana,text=".",width=ancho,height=alto,command=lambda:pulsar("."))
+boton_punto.grid(row=3,column=2,padx=5,pady=5)
+
+boton_suma=Button(ventana,text="+",width=ancho,height=alto,command=lambda:pulsar("+"))
+boton_suma.grid(row=3,column=3,padx=5,pady=5)
+
 ventana.mainloop()
