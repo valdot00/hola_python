@@ -2,7 +2,7 @@ from tkinter import *
 
 ventana = Tk()
 ventana.title("calculadora")
-ventana.geometry("400x600")
+ventana.geometry("400x350")
 ventana.resizable(False,False)
 ventana.configure(background="gray")
 
@@ -22,7 +22,18 @@ def pulsar(valor):
     global resultado
     operacion = operacion + str(valor)
     pantalla.delete(0,END)
-    pantalla.insert(0,operacion)    
+    pantalla.insert(0,operacion)
+
+def calcular():
+    global operacion
+    global resultado
+    try:
+        resultado = str(eval(operacion))
+    except:
+        resultado="Error"
+    finally:
+        pantalla.delete(0,END)
+        pantalla.insert(0,resultado)              
 
 # display de los resultados
 
@@ -78,5 +89,19 @@ boton_punto.grid(row=3,column=2,padx=5,pady=5)
 
 boton_suma=Button(ventana,text="+",width=ancho,height=alto,command=lambda:pulsar("+"))
 boton_suma.grid(row=3,column=3,padx=5,pady=5)
+
+# Botones de la fila 4
+
+boton_resta=Button(ventana,text="-",width=ancho,height=alto,command=lambda:pulsar("-"))
+boton_resta.grid(row=4,column=0,padx=5,pady=5)
+
+boton_multi=Button(ventana,text="*",width=ancho,height=alto,command=lambda:pulsar("*"))
+boton_multi.grid(row=4,column=1,padx=5,pady=5)
+
+boton_divi=Button(ventana,text="/",width=ancho,height=alto,command=lambda:pulsar("/"))
+boton_divi.grid(row=4,column=2,padx=5,pady=5)
+
+boton_igual=Button(ventana,text="=",width=ancho,height=alto,command=lambda:calcular())
+boton_igual.grid(row=4,column=3,padx=5,pady=5)
 
 ventana.mainloop()
