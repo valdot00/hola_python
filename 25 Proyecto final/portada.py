@@ -34,6 +34,17 @@ isbn = StringVar()
 entrada4 = Entry(ventana,textvariable=isbn)
 entrada4.grid(row=1,column=3)
 
+#lista y scrollbar
+
+lista = Listbox(ventana,height=8,width=25)
+lista.grid(row=2,column=0,rowspan=6,columnspan=2)
+
+scrollbar = Scrollbar(ventana)
+scrollbar.grid(row=2,column=2,rowspan=6)
+
+lista.configure(yscrollcommand=scrollbar.set)
+scrollbar.configure(command=lista.yview)
+
 #titulo
 ventana.title("Libros")
 ventana.mainloop()
