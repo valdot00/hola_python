@@ -45,6 +45,26 @@ scrollbar.grid(row=2,column=2,rowspan=6)
 lista.configure(yscrollcommand=scrollbar.set)
 scrollbar.configure(command=lista.yview)
 
+#botones
+
+boton1 = Button(ventana,text="Visualizar",width=12)
+boton1.grid(row=2,column=3)
+
+boton2 = Button(ventana,text="Buscar",width=12)
+boton2.grid(row=3,column=3)
+
+boton3 = Button(ventana,text="Añadir",width=12)
+boton3.grid(row=4,column=3)
+
+boton4 = Button(ventana,text="Actualizar",width=12)
+boton4.grid(row=5,column=3)
+
+boton5 = Button(ventana,text="Borrar",width=12)
+boton5.grid(row=6,column=3)
+
+boton6 = Button(ventana,text="Cerrar",width=12)
+boton6.grid(row=7,column=3)
+
 #titulo
 ventana.title("Libros")
 ventana.mainloop()
