@@ -22,6 +22,39 @@ def comando_insertar():
     lista.insert(END,(titulo.get(),autor.get(),year.get(),isbn.get()))
 
 
+def recoger_fila_seleccionada(event):
+    try:
+        global libro_seleccionado
+        indice=lista.curselection()[0]
+        libro_seleccionado = lista.get(indice)
+
+        entrada1.delete(0,END)
+        entrada1.insert(END,libro_seleccionado[1])
+
+        entrada2.delete(0,END)
+        entrada2.insert(END,libro_seleccionado[2])
+
+        entrada3.delete(0,END)
+        entrada3.insert(END,libro_seleccionado[3])
+
+        entrada4.delete(0,END)
+        entrada4.insert(END,libro_seleccionado[4])
+
+    except IndexError:
+           pass
+
+
+def comando_actualizar():
+    operaciones.Actualizar(titulo.get(),autor.get(),year.get(),isbn.get(),libro_seleccionado[0])
+    lista.delete(0,END)
+    lista.insert(END,"libro actualizado correctamente")     
+
+def comando_borrar():
+    operaciones.borrar(libro_seleccionado[0])
+    lista.delete(0,END)
+    lista.insert(END,"libro borrado correctamente")
+
+
 #creamos la ventana 
 
 ventana = Tk() 
@@ -69,6 +102,10 @@ scrollbar.grid(row=2,column=2,rowspan=6)
 lista.configure(yscrollcommand=scrollbar.set)
 scrollbar.configure(command=lista.yview)
 
+#evento a la lista
+
+lista.bind('<<ListboxSelect>>',recoger_fila_seleccionada)
+
 #botones
 
 boton1 = Button(ventana,text="Visualizar",width=12,command=comando_visualizar)
@@ -80,10 +117,10 @@ boton2.grid(row=3,column=3)
 boton3 = Button(ventana,text="Añadir",width=12,command=comando_insertar)
 boton3.grid(row=4,column=3)
 
-boton4 = Button(ventana,text="Actualizar",width=12)
+boton4 = Button(ventana,text="Actualizar",width=12,command=comando_actualizar)
 boton4.grid(row=5,column=3)
 
-boton5 = Button(ventana,text="Borrar",width=12)
+boton5 = Button(ventana,text="Borrar",width=12,command=comando_borrar)
 boton5.grid(row=6,column=3)
 
 boton6 = Button(ventana,text="Cerrar",width=12)
