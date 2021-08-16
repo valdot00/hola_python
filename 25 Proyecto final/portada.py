@@ -1,5 +1,29 @@
 from tkinter import *
 
+import operaciones
+
+#funciones para los botones
+
+def comando_visualizar():
+    lista.delete(0,END)
+    lista_libros = operaciones.Visualizar()
+    for libro in lista_libros:
+        lista.insert(END,libro)
+
+def comando_buscar():
+    lista.delete(0,END)
+    lista_libros = operaciones.buscar(titulo.get(),autor.get(),year.get(),isbn.get())
+    for libro in lista_libros:
+        lista.insert(END,libro)    
+
+def comando_insertar():
+    operaciones.insertar(titulo.get(),autor.get(),year.get(),isbn.get())
+    lista.delete(0,END)
+    lista.insert(END,(titulo.get(),autor.get(),year.get(),isbn.get()))
+
+
+#creamos la ventana 
+
 ventana = Tk() 
 
 #CREAMOS LAS ETIQUETAS
@@ -47,13 +71,13 @@ scrollbar.configure(command=lista.yview)
 
 #botones
 
-boton1 = Button(ventana,text="Visualizar",width=12)
+boton1 = Button(ventana,text="Visualizar",width=12,command=comando_visualizar)
 boton1.grid(row=2,column=3)
 
-boton2 = Button(ventana,text="Buscar",width=12)
+boton2 = Button(ventana,text="Buscar",width=12,command=comando_buscar)
 boton2.grid(row=3,column=3)
 
-boton3 = Button(ventana,text="Añadir",width=12)
+boton3 = Button(ventana,text="Añadir",width=12,command=comando_insertar)
 boton3.grid(row=4,column=3)
 
 boton4 = Button(ventana,text="Actualizar",width=12)
