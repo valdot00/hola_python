@@ -21,7 +21,6 @@ def comando_insertar():
     lista.delete(0,END)
     lista.insert(END,(titulo.get(),autor.get(),year.get(),isbn.get()))
 
-
 def recoger_fila_seleccionada(event):
     try:
         global libro_seleccionado
@@ -43,7 +42,6 @@ def recoger_fila_seleccionada(event):
     except IndexError:
            pass
 
-
 def comando_actualizar():
     operaciones.Actualizar(titulo.get(),autor.get(),year.get(),isbn.get(),libro_seleccionado[0])
     lista.delete(0,END)
@@ -54,6 +52,8 @@ def comando_borrar():
     lista.delete(0,END)
     lista.insert(END,"libro borrado correctamente")
 
+def comando_cerrar():
+    ventana.destroy()    
 
 #creamos la ventana 
 
@@ -123,7 +123,7 @@ boton4.grid(row=5,column=3)
 boton5 = Button(ventana,text="Borrar",width=12,command=comando_borrar)
 boton5.grid(row=6,column=3)
 
-boton6 = Button(ventana,text="Cerrar",width=12)
+boton6 = Button(ventana,text="Cerrar",width=12,command=comando_cerrar)
 boton6.grid(row=7,column=3)
 
 #titulo
