@@ -92,4 +92,3 @@ boton6.grid(row=7,column=3)
 #titulo
 ventana.title("Libros")
 ventana.mainloop()
-
